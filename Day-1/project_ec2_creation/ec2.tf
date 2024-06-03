@@ -1,27 +1,27 @@
 provider "aws" {
-    alias = "sgk"
+    alias = "kgs"
     region = "us-east-2"  # Set your desired AWS region
 }
 
 provider "aws"{
-    alias = "teams"
+    alias = "role"
 region = "ap-northeast-2"
 }
 
-resource aws_instance "ec2_region1"{
-    ami = "ami-09040d770ffe2224f"
+resource aws_instance "ec2_regionE"{
+    ami = "ami-0ca2e925753ca2fb4"
     instance_type = "t2.micro"
     tags = {
-      Name = "region-1"
+      Name = "East-1"
     }
     provider = aws.sgk
 }
 
-resource aws_instance "ec2_region2"{
-    ami = "ami-0e6f2b2fa0ca704d0"
+resource aws_instance "ec2_regionNE"{
+    ami = "ami-0b8414ae0d8d8b4cc"
     instance_type = "t2.micro"
     tags = {
-        Name = "region-2"
+        Name = "Northeast-2"
     }
     provider = aws.teams
 }
